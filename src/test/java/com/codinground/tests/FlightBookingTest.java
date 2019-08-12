@@ -1,5 +1,8 @@
-package com.condinground.tests;
+package com.codinground.tests;
 
+import com.codinground.base.TestBase;
+import com.codinground.pageobject.FlightBookingPage;
+import com.codinground.utility.WaitUtility;
 import com.sun.javafx.PlatformUtil;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
@@ -12,15 +15,16 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class FlightBookingTest {
+public class FlightBookingTest extends TestBase {
 
-    private WebDriver driver = new ChromeDriver();
+    private WaitUtility waitUtility;
+    private FlightBookingPage flightBookingPage;
 
 
-    @Test
+    @Test(priority = 3, description = "Search For Flights Between Two Locations & Date As 18th Of Current Month")
     public void testThatResultsAppearForAOneWayJourney() {
 
-        setDriverPath();
+       /* setDriverPath();
         driver.get("https://www.cleartrip.com/");
         waitFor(2000);
         driver.findElement(By.id("OneWay")).click();
@@ -54,26 +58,41 @@ public class FlightBookingTest {
         Assert.assertTrue(isElementPresent(By.className("searchSummary")));
 
         //close the browser
-        driver.quit();
+        driver.quit();*/
+
+       waitUtility = new WaitUtility();
+       waitUtility.PauseBrowser(2);
+
+       flightBookingPage = new FlightBookingPage(driver);
+
+       flightBookingPage.NavigateToFlights();
+
+       waitUtility.PauseBrowser(2);
+
+       flightBookingPage.SelectTrip(FlightBookingPage.TripType.OneWay);
+
+       flightBookingPage.flightFrom("Bangalore");
+
+       flightBookingPage.flightTo("Delhi");
+
+        flightBookingPage.flightDepartureDateForCurrentMonthFrom("18");
+
+        waitUtility.PauseBrowser(2);
+
+        flightBookingPage.searchForFlights();
+
+        Assert.assertTrue(flightBookingPage.isSearchResultPageRendered());
+
+        // Wait for 3 minutes before Closing browser
+        waitUtility.PauseBrowser(3);
 
     }
 
-
-    private void waitFor(int durationInMilliSeconds) {
+    /*private void waitFor(int durationInMilliSeconds) {
         try {
             Thread.sleep(durationInMilliSeconds);
         } catch (InterruptedException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-        }
-    }
-
-
-    private boolean isElementPresent(By by) {
-        try {
-            driver.findElement(by);
-            return true;
-        } catch (NoSuchElementException e) {
-            return false;
         }
     }
 
@@ -87,5 +106,5 @@ public class FlightBookingTest {
         if (PlatformUtil.isLinux()) {
             System.setProperty("webdriver.chrome.driver", "chromedriver_linux");
         }
-    }
+    }*/
 }

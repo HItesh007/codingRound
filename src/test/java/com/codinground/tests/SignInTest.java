@@ -1,4 +1,4 @@
-package com.condinground.tests;
+package com.codinground.tests;
 
 import com.codinground.base.TestBase;
 import com.codinground.pageobject.SignInPage;
@@ -42,6 +42,8 @@ public class SignInTest extends TestBase {
 
         String errorMessage = signInPage.getErrorMessage();
 
+        waitUtil.PauseBrowser(2);
+
         System.out.print("------------- ERROR MESSAGE -----------------------");
         System.out.print(errorMessage);
         System.out.print("------------- ERROR MESSAGE -----------------------");
@@ -50,6 +52,10 @@ public class SignInTest extends TestBase {
         Assert.assertTrue(errorMessage.contains("YOUR USERNAME IS A REQUIRED FIELD"));
         Assert.assertTrue(errorMessage.contains("YOUR ACCOUNT PASSWORD IS A REQUIRED FIELD"));
 
+        // Close Sign in Pop Up
+        signInPage.closeSignInPopUp();
+
+        waitUtil.PauseBrowser(2);
     }
 
     /*private void waitFor(int durationInMilliSeconds) {

@@ -1,4 +1,4 @@
-package com.condinground.tests;
+package com.codinground.tests;
 
 import com.codinground.base.TestBase;
 import com.codinground.pageobject.HotelBookingPage;
@@ -50,13 +50,19 @@ public class HotelBookingTest extends TestBase {
 
         hotelBookingPage.navigateToHotelTab();
 
+        waitUtility.PauseBrowser(1);
+
         hotelBookingPage.searchForHotelAt("Indiranagar, Bangalore");
 
         hotelBookingPage.searchHotelForTravellersAs("1 room, 2 adults");
 
+        waitUtility.PauseBrowser(2);
+
         hotelBookingPage.searchForHotels();
 
         System.out.println("Total Hotel List : " + hotelBookingPage.getTotalHotelCount());
+
+        waitUtility.PauseBrowser(2);
     }
 
     /*private void setDriverPath() {

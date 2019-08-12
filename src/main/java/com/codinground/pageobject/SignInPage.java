@@ -1,6 +1,5 @@
 package com.codinground.pageobject;
 
-import com.codinground.base.TestBase;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -30,6 +29,9 @@ public class SignInPage {
 
     @FindBy(id = "modal_window")
     private WebElement popUpIFrameElement;
+
+    @FindBy(id = "close")
+    private WebElement closePopUpBtnElement;
 
     // Initializing the Page Object
     public SignInPage(WebDriver driver) {
@@ -63,6 +65,12 @@ public class SignInPage {
         wait.until(ExpectedConditions.visibilityOf(errorDivEle));
 
         return errorDivEle.getText().trim().toUpperCase();
+    }
+
+    public void closeSignInPopUp() {
+        this._driver.switchTo().parentFrame();
+
+        closePopUpBtnElement.click();
     }
 
 }
