@@ -1,0 +1,37 @@
+--------------------------------------------------------------------------------------------------------------------------------------------
+##################################### ------------ CODE REVIEW COMMENTS ----------------------- ############################################
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+1. The project has been converted to Page Object design pattern and based on that the following packages has been created.
+- com.codinground.base
+- com.condinground.pageobject
+- com.codinground.utility
+- com.codinground.tests
+
+#1 - com.codinground.base
+- This is where the initialization of driver instance & tear down is implemented.
+- Also, added code to disable notifications on chrome using ChromeOptions class.
+- Implicit wait timeout initialized for all findElements methods.
+- The cookies also cleared using deleteAllCookies() method.
+- Two test annotation @BeforeSuite & @AfterSuite is used to drive the initialization and teardown without calling those methods.
+
+#2 - com.condinground.pageobject
+- This contains page wise findElements using PageFactory & Logic to work with pages using meaningful method names.
+- In FlightBookingPage.java, for picking date, at the moment created simple method which will pick date from current month only and that should be greater than current date.
+- As extension to this, a proper JQueryCalendarPicker(String startDate, String endDate) can be created to pick date based on provided start & end date.
+
+#3 - com.codinground.utility
+- For now, the waitFor(long timeInMiliSeconds) method that was created in individual test cases, that has been moved to this Utility with changed name as PauseBrowser(int timeInSeconds)
+
+#4 - com.codinground.tests
+- All the test cases now have test cases in very abstracted way. They just take parameters to drive the automation process with data.
+- Also, it is good practice to create Java file per page test case to increase the maintainability and scalability.
+
+
+Note: The original code has been commented in test cases just to keep them as is.
+
+2. TestNg.xml file created to run all the test cases in batch mode. So all the test cases can be run in one execution.
+- The test case has their priority for execution.
+- So Here the com.codinground.tests.SignInTest#shouldThrowAnErrorIfSignInDetailsAreMissing() has priority as 0. Which means it will be executed first.
+- com.codinground.tests.HotelBookingTest#shouldBeAbleToSearchForHotels has priority as 1. So this will be executed 2nd.
+- com.codinground.tests.FlightBookingTest#testThatResultsAppearForAOneWayJourney has priority as 3. So this will be executed as 3rd.

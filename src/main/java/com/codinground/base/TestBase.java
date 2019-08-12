@@ -25,7 +25,6 @@ public class TestBase {
 
             ChromeOptions chromeOptions = new ChromeOptions();
             chromeOptions.addArguments("--disable-notifications");
-            chromeOptions.addArguments("disable-infobars");
 
             // Initialize Driver Instance
             driver = new ChromeDriver(chromeOptions);
