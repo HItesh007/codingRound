@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="4" total="7" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Clear Trip Test Suite" duration-ms="56003" started-at="2019-08-13T06:22:46Z" finished-at="2019-08-13T06:23:42Z">
+    <groups>
+    </groups>
+    <test name="Clear Trip &gt; Coding Round Test Cases" duration-ms="56003" started-at="2019-08-13T06:22:46Z" finished-at="2019-08-13T06:23:42Z">
+      <class name="com.codinground.tests.HotelBookingTest">
+        <test-method status="PASS" signature="shouldBeAbleToSearchForHotels()[pri:1, instance:com.codinground.tests.HotelBookingTest@2ff4f00f]" name="shouldBeAbleToSearchForHotels" duration-ms="25871" started-at="2019-08-13T06:22:54Z" description="User should be able to search for hotels." finished-at="2019-08-13T06:23:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- shouldBeAbleToSearchForHotels -->
+      </class> <!-- com.codinground.tests.HotelBookingTest -->
+      <class name="com.codinground.tests.SignInTest">
+        <test-method status="PASS" signature="InitializeTests()[pri:0, instance:com.codinground.tests.SignInTest@5ba23b66]" name="InitializeTests" is-config="true" duration-ms="17262" started-at="2019-08-13T06:22:29Z" finished-at="2019-08-13T06:22:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- InitializeTests -->
+        <test-method status="PASS" signature="shouldThrowAnErrorIfSignInDetailsAreMissing()[pri:0, instance:com.codinground.tests.SignInTest@5ba23b66]" name="shouldThrowAnErrorIfSignInDetailsAreMissing" duration-ms="7995" started-at="2019-08-13T06:22:46Z" description="Sign In Test Case To Check Invalid Login Attempt Without User Credentials." finished-at="2019-08-13T06:22:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- shouldThrowAnErrorIfSignInDetailsAreMissing -->
+        <test-method status="PASS" signature="TearDownDriver()[pri:0, instance:com.codinground.tests.SignInTest@5ba23b66]" name="TearDownDriver" is-config="true" duration-ms="4339" started-at="2019-08-13T06:23:42Z" finished-at="2019-08-13T06:23:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TearDownDriver -->
+      </class> <!-- com.codinground.tests.SignInTest -->
+      <class name="com.codinground.tests.FlightBookingTest">
+        <test-method status="PASS" signature="testThatResultsAppearForAOneWayJourney()[pri:3, instance:com.codinground.tests.FlightBookingTest@c818063]" name="testThatResultsAppearForAOneWayJourney" duration-ms="22114" started-at="2019-08-13T06:23:20Z" description="Search For Flights Between Two Locations &amp; Date As 18th Of Current Month" finished-at="2019-08-13T06:23:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testThatResultsAppearForAOneWayJourney -->
+      </class> <!-- com.codinground.tests.FlightBookingTest -->
+    </test> <!-- Clear Trip > Coding Round Test Cases -->
+  </suite> <!-- Clear Trip Test Suite -->
+</testng-results>

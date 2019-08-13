@@ -44,9 +44,9 @@ public class SignInTest extends TestBase {
 
         waitUtil.PauseBrowser(2);
 
-        System.out.print("------------- ERROR MESSAGE -----------------------");
-        System.out.print(errorMessage);
-        System.out.print("------------- ERROR MESSAGE -----------------------");
+        System.out.println("------------- ERROR MESSAGE -----------------------");
+        System.out.println(errorMessage);
+        System.out.println("------------- ERROR MESSAGE -----------------------");
 
         Assert.assertTrue(errorMessage.contains("THERE WERE ERRORS IN YOUR SUBMISSION"));
         Assert.assertTrue(errorMessage.contains("YOUR USERNAME IS A REQUIRED FIELD"));

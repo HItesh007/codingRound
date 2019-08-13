@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="example suite 1" verbose="1" >
-    <test name="Regression suite 1" >
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Clear Trip Test Suite" verbose="1" >
+    <test name="Clear Trip > Coding Round Test Cases" >
         <classes>
             <class name="com.codinground.tests.SignInTest" />
             <class name="com.codinground.tests.HotelBookingTest" />
